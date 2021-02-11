@@ -19,7 +19,13 @@ set(CMAKE_AUTORCC ON)
 # Trying find_package tries to load Qt5 instead of Qt6.
 # find_package(KDDockWidgets REQUIRED)
 
+# Add define.
+add_definitions(-DQT_WIDGETS_LIB)
+
 add_executable(conan_qt6_kddw
     src/main.cpp
 )
-target_link_libraries(conan_qt6_kddw ${CONAN_LIBS})
+target_link_libraries(conan_qt6_kddw
+        ${CONAN_LIBS}
+        kddockwidgets1.lib
+        )
